@@ -1,9 +1,3 @@
-"""
-Ok, so...It works, but it's inconvenient. I want to be
-able to add multiple names in the beginning of the 
-program, so I think I can't use a list for that.
-"""
-
 import random
 import sys
 
@@ -16,12 +10,14 @@ def getRandomName():
   print(list[newName])
 
 def nameFunction():
-  choice = input("Do you want to enter a name? (y/n) ")
+  choice = input("Do you want to add names? (y/n) ")
   while choice == "y":
-    name = input("Enter a name: ")
-    list.append(name)
-    print(list)
-    choice = input("Do you want to enter a name? (y/n) ")
+    name = input("Enter a name or type 'STOP': ")
+    if name != "STOP":
+      list.append(name)
+      print(list)
+    else:
+      choice = input("Do you want to add names? (y/n) ")
 
   if choice == "n":
     randomName = input("Do you want to select a random name? (y/n) ")
